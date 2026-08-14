@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <p> Your Next Home Starts Here.. 🏠 </p>
+        <h3>(Find safe, affordable, and comfortable PGs, co-living spaces, and homes.)</h3>
+    </div>
+
+    <div class="main">
+        <div class="first">
+            <div class="left">
+                <div class="icon">
+                    <p>🏠</p>
+                </div>
+                <div class="text">
+                    <h5>{{types.0}}'s</h5>
+                    <p>Find the best PG's here</p> 
+                </div>
+            </div>
+            <div class="arrow">
+                <a href="{% url 'pg' %}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(235, 239, 245)" d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></a>
+            </div>
+
+
+        </div>
+        <div class="second">
+            <div class="left">
+                <div class="icon">
+                    <p>🏢 </p>
+                </div>
+                <div class="text">
+                    <h5 style="color: rgb(81, 81, 237);">{{types.1}}'s</h5>
+                    <p style="color: rgb(81, 81, 237);">Explore co-living space</p> 
+                </div>
+            </div>
+            <div class="arrow">
+                <a href="{% url 'colive' %}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(10, 10, 10)" d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></a>
+            </div>
+           
+            
+        </div>
+        <div class="third">
+            <div class="left">
+                <div class="icon">
+                    <p>🏡 </p>
+                </div>
+                <div class="text">
+                    <h5 >{{types.2}}'s</h5>
+                    <p >Find your perfect home</p> 
+                </div>
+            </div>
+            <div class="arrow">
+                <a href="{% url 'homes' %}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(235, 239, 245)" d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

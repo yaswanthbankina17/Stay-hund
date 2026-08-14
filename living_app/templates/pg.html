@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/pg.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="Get">
+    <div class="head">
+        <div class="arrow">
+            <a href="{% url 'index' %}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(0, 0, 0)" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </a>
+        </div>
+            <div class="bar">
+                <div class="left">
+                    <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(255, 91, 91)" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></a> 
+                </div>
+                
+                <div class="middle">
+                    <input type="text" name="pg_name" value="{{pg_name}}" placeholder="Search PG by name">
+                </div>
+                <div class="right" >
+                    <div class="btn">
+                    <button id="butt" type="submit">Click</button>
+                </div>
+                </div>
+                
+            </div>
+            <div class="filter">
+                
+                <form method="Get">
+                    
+                    <select id="filter_list"  name="location" >
+                        <option value="">All loc</option>
+                        {% for i in loc_names %}
+                        <option value="{{i}}"  {% if i == location %} selected {% endif %} >
+                            {{i}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
+    </div>
+    </form>
+    <div class="outer">
+        <div class="inner">
+            <div class="info">
+                
+                <div class="info_con">
+                    <h3>Available PGs</h3>
+                    <p>Find safe, comfortable and affordable PGs</p>
+                    <div class="line"></div>
+                    
+                </div>
+                <!-- <div class="stay_type">
+                    <p>Change Stay type</p>
+                    <a href="{% url 'colive' %}">Coliving</a>
+                    <a href="{% url 'homes' %}">Homes</a>
+                </div> -->
+                
+            </div>
+            <div class="container">
+                {% for pg in pg_list %}
+                
+                <div class="card">
+                    <a href="{% url 'pg_details' pg.id %}">
+                        <img src="{{ pg.property_img.url }}" alt="no image">
+                    </a>
+
+                    <div class="card-body">
+                        <h3 >{{ pg.name }}</h3>
+                    </div>
+                </div>
+                {% empty %}
+                    <h1>{{ res }}</h1>
+                {% endfor %}
+                
+            </div>
+        </div>
+
+    </div>
+    
+
+</body>
+</html>
+{% endblock %}

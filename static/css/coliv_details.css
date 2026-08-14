@@ -1,0 +1,443 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    height: 74px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color:  rgba(246, 210, 253, 0.441);
+    a{
+        height: 30px;
+        width: 20px;
+        margin-top: 7px;
+        margin-left: 15px;
+        position: relative;
+    }
+    span{
+        margin-left: 10px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+.body{
+    width: 95%;
+    min-height: 100vh;
+    background-color: rgb(253, 250, 250);
+    margin-left: 2.5%;
+    display: flex;
+    justify-content: space-around;
+
+    
+}
+h5{
+    font-size: 1.1rem;
+    margin-left: 60px;
+    opacity: 60%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.side1{
+    min-height: 107vh;
+    padding: 20px;
+    width: 64.5%;
+    border: 1px rgba(0, 0, 0, 0.09) solid;
+    background-color: white;
+    
+
+}
+.gallery{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    gap: 2px;
+
+}
+.big{
+    height: 100%;
+    width: 60%;
+    img{
+        position: relative;
+        object-fit: cover;
+        border-radius: 10px;
+        width: 100%;
+        height: 60vh;
+    }
+}
+.small{
+    height: 100%;
+    width: 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    img{
+        width: 100%;
+        height: 33%;
+        border-radius: 10px;
+        object-fit: cover;
+        position: relative;
+    }
+}
+
+.pg_con{
+    min-height: 16vh;
+    min-width: 100%;
+    padding: 10px;
+    border: 1px rgba(123, 123, 123, 0.185) solid;
+    opacity: 80%;
+    h3{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    p{
+        font-family: cursive;
+        font-size: 0.8rem;
+    }
+}
+
+.features{
+    min-height: 50vh;
+    min-width: 100%;
+    padding: 10px;
+    h3{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        opacity: 80%;
+    }
+
+}
+.symbols{
+    height: 40vh;
+    min-width: 100%;
+    display: grid;
+    
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+.f_icons{
+    height: 90px;
+    background: white;
+    border-radius: 10px ;
+    border: 1px rgba(116, 111, 111, 0.482) solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 2px ;
+    transition: transform 0.3s ease,box-shadow;
+    
+
+    p{
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #202020;
+    }
+}
+.f_icons:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.icon{
+    display: flex;
+    a{
+        height: 25px;
+        min-width: 35px;
+    }
+}
+
+.rooms{
+    min-width: 100%;
+    min-height: 150px;
+    padding: 10px;
+}
+.room_box{
+    min-height: 130px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+}
+.r_types{
+    height: 150px;
+    width: 90%;
+    border: #97949489 1px solid;
+    box-shadow: 0 5px 10px;
+    border-radius: 20px;
+    img{
+        height: 150px;
+        width: 100%;
+        border-radius: 20px;
+    }
+    p{
+        margin-left: 33%;
+        color: rgb(0, 89, 255);
+        font-weight: 600;
+    }
+
+}
+
+.side2{
+    min-height: 90vh;
+    width: 35%;
+    background-color: rgba(244, 245, 242, 0.368);
+    border: 1px rgba(0, 0, 0, 0.09) solid;
+    h3{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 10px;
+    }
+    p{
+        span{
+            opacity: 100%;
+        }
+        font-size: small;
+        opacity: 70%;
+    }
+}
+.price{
+    min-height: 55px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(245, 214, 209, 0.502);
+    border-radius: 10px;
+    /* margin-top: 10px; */
+    margin-left: 15px;
+    margin-left: 5px;
+    h4{
+        color: rgb(255, 34, 34) ;
+        margin-left: 5%;
+        span{
+            
+            color: black;
+        }
+        
+    }
+    p{
+        margin-left: 18px;
+    }
+}
+.pg_type{
+    min-height: 55px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    /* justify-content:flex-start; */
+    /* flex-direction: column; */
+    background-color: rgb(249, 249, 248);
+    border-radius: 10px;
+    
+}
+.fs{
+    width: 20px;
+    a{
+        margin-left: 20px;
+        height: 20px;
+        width: 20px;
+        position: relative;
+    }
+}
+.ss{
+    opacity: 80%;
+    margin-left: 30px;
+    width: 60%;
+}
+.line{
+    height: 1px;
+    width: 80%;
+    background-color: black;
+    margin-left: 5%;
+    opacity: 20%;
+}
+
+.diposit{
+    min-height: 50px;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.ld{
+    min-height: 50px;
+    min-width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.ldicon{
+    display: flex;
+    a{
+        height: 23px;
+        width: 23px;
+
+    }
+}
+.ldcon{
+    margin-left: 2%;
+    p{
+        font-size: 0.6rem;
+    }
+}
+.md{
+    height: 48px;
+    width: 0.1%;
+    background-color: rgb(233, 237, 233);
+    
+}
+.rd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 49%;
+}
+.rdicon{
+    display: flex;
+    a{
+        height: 23px;
+        width: 23px;
+
+    }
+}
+.rdcon{
+    margin-left: 3%;
+    p{
+        font-size: 0.6rem;
+    }
+}
+
+.contact{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: orange; */
+    gap: 5px;
+}
+.phone{
+    height: 40px;
+    width: 48%;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 70%;
+    gap: 0px;
+    a{
+        margin-left: 7%;
+        text-decoration: none;
+        color: white;
+        height: 20px;
+        width: 20px;
+        font-size: 90%;
+
+    }
+
+}
+.whatsapp{
+    height: 40px;
+    width: 48%;
+    background-color: green;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 70%;
+    gap: 2px;
+    a{
+        margin-left: 7%;
+        text-decoration: none;
+        color: white;
+        height: 20px;
+        width: 20px;
+        font-size: 90%;
+    }
+}
+
+.direction{
+    height: 40px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: white;
+    border: 1px rgb(244, 5, 5) solid;
+    border-radius: 10px;
+    margin-left: 5%;
+    gap: 5px;
+}
+.dicon{
+    height: 30px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    a{
+        height: 20px;
+        width: 20px;
+        margin-bottom: 5px;
+    }
+}
+.dcon{
+    height: 30px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    a{
+        text-decoration: none;
+    }
+}
+
+.owner{
+    min-height: 50px;
+    width: 95%;
+    display: flex;
+    padding: 10px;
+    border: 1px rgba(0, 0, 0, 0.438) 
+    solid;
+    border-radius: 10px;
+    margin-left: 3%;
+    opacity: 80%;
+}
+.oicon{
+    height: 40px;
+    width: 10%;
+    display: flex;
+    opacity: 100%;
+    
+
+    a{
+        height: 20px;
+        width: 20px;
+        position: relative;
+    }
+}
+
+.ocon{
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3px;
+}
+
+.rules{
+    min-height: 100px;
+    width: 100%;
+    padding: 10px;
+    p{
+        margin-left: 20px;
+        padding: 1px;
+    }
+}

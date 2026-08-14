@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>living_Site</title>
+</head>
+<body>
+    <div class="menu_sec">
+                    <button class="menu-btn" id="bar" onclick="openMenu()">
+                    ☰
+                    </button>
+
+                <!-- Side Menu -->
+                    <div id="sideMenu" class="side-menu">
+
+                        <button class="close-btn" onclick="closeMenu()">
+                        ×
+                        </button>
+                
+                        <h2>Menu</h2>
+                
+                        <a href="{% url 'index' %}">🏠 Home</a>
+                
+                        <a href="{% url 'pg' %}">🏠 PG</a>
+                
+                        <a href="{% url 'colive' %}">🏢 Coliving</a>
+                
+                        <a href="{% url 'homes' %}">🏡 Homes</a>
+                
+                        <!-- <a href="#">📞 Contact Us</a>
+                    
+                        <a href="#">ℹ️ About Us</a> -->
+                
+                    </div>
+                    <script>
+
+                        function openMenu() {
+                        document.getElementById("sideMenu").style.left = "0";
+                         document.getElementById("bar").style.opacity="0"
+                        }
+
+                        function closeMenu() {
+                            document.getElementById("sideMenu").style.left = "-280px";
+                            document.getElementById("bar").style.transitionDuration="0.3s"
+                            document.getElementById("bar").style.opacity="1"
+
+                           
+                        }
+
+                    </script>
+                </div>
+    {% block content %}
+    {% endblock %}
+
+    <div class="fotter">
+        <div class="foot_1">
+            <div class="f_info">
+                <p id="icon">🏠 <label>PG <span>Coliv &</span> Homes</label> </p><br>
+                <P>&nbsp;&nbsp;Your next homes starts here .</P>
+                <p>&nbsp;&nbsp;Find safe, affordable, and</p>
+                <p>&nbsp;&nbsp;comfortable PGs, co-living</p>
+                <p>&nbsp;&nbsp;space, and homes.</p>
+                <div class="symbcon">
+                    <div class="fo_icons">
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="rgb(252, 252, 252)" d="M496 544a144 144 0 1 1 0-288 144 144 0 1 1 0 288zM268.6 6.5c12.2-9.3 29.7-8.7 41.2 2l217.6 202c-10.2-1.7-20.7-2.6-31.3-2.6-78.6 0-146.1 47.2-175.8 114.8-5.1-1.8-10.5-2.8-16.2-2.8l-32 0c-26.5 0-48 21.5-48 48l0 96 91 0c6.1 17.3 14.6 33.4 25.1 48L144 512c-35.3 0-64-28.7-64-64l0-176-16 0c-13.2 0-25-8.1-29.8-20.3s-1.6-26.2 8-35.1l224-208 2.4-2zM553.4 339.1c-7.1-5.2-17.1-3.6-22.3 3.5l-53 72.8-26.7-26.8c-6.2-6.2-16.4-6.2-22.6 0-6.2 6.2-6.2 16.4 0 22.6l40 40c3.3 3.3 7.9 5 12.6 4.7s8.9-2.8 11.7-6.6l64-88c5.2-7.1 3.6-17.1-3.5-22.3z"/></svg>
+                        </a>
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570 512"><path fill="rgb(252, 252, 252)" d="M0 64C0 46.3 14.3 32 32 32l264 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-76.7 0c17.7 19.8 30.1 44.6 34.7 72l42 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-42 0c-10.4 62.2-60.8 110.9-123.8 118.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c35.8 0 66.1-23.5 76.3-56L24 200c-13.3 0-24-10.7-24-24s10.7-24 24-24l164.3 0c-10.2-32.5-40.5-56-76.3-56L32 96C14.3 96 0 81.7 0 64z"/></svg>
+                        </a>
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(252, 252, 252)" d="M378.9 80c-27.3 0-53 13.1-69 35.2l-34.4 47.6c-4.5 6.2-11.7 9.9-19.4 9.9s-14.9-3.7-19.4-9.9l-34.4-47.6c-16-22.1-41.7-35.2-69-35.2-47 0-85.1 38.1-85.1 85.1 0 49.9 32 98.4 68.1 142.3 41.1 50 91.4 94 125.9 120.3 3.2 2.4 7.9 4.2 14 4.2s10.8-1.8 14-4.2c34.5-26.3 84.8-70.4 125.9-120.3 36.2-43.9 68.1-92.4 68.1-142.3 0-47-38.1-85.1-85.1-85.1zM271 87.1c25-34.6 65.2-55.1 107.9-55.1 73.5 0 133.1 59.6 133.1 133.1 0 68.6-42.9 128.9-79.1 172.8-44.1 53.6-97.3 100.1-133.8 127.9-12.3 9.4-27.5 14.1-43.1 14.1s-30.8-4.7-43.1-14.1C176.4 438 123.2 391.5 79.1 338 42.9 294.1 0 233.7 0 165.1 0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1l15 20.7 15-20.7z"/></svg>
+                        </a>
+                    </div>
+                    <div class="fo_cont">
+                    <h4>100% Verified Livings</h4>
+                    <p>Trusted & Verified</p><br>
+                    <h4>Affordable Prices</h4>
+                    <p>Best in your budget</p><br>
+                    <h4>Comfort & Safety</h4>
+                    <p>Your well-being first</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="links">
+                <h3>QUICK LINKS</h3><br>
+                <div class="l_line"></div><br>
+                <a href="{% url 'index' %}"><span>> &nbsp;</span> Home</a><br><br>
+                <a href=""><span>> &nbsp;</span> About Us</a><br><br>
+                <a href="{% url 'pg' %}"><span>> &nbsp;</span> PG's</a><br><br>
+                <a href="{% url 'colive' %}"><span>> &nbsp;</span> Coliving's</a><br><br>
+                <a href="{% url 'homes' %}"><span>> &nbsp;</span> Homes</a><br><br>
+                <a href=""><span>> &nbsp;</span> Contact Us</a>
+            </div>
+            <div class="property">
+                <h3>PROPERTY TYPES</h3><br>
+                <div class="l_line"></div><br>
+                <div class="pg_types">
+                    <div class="pg_icon">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="rgb(252, 92, 116)" d="M32 32c17.7 0 32 14.3 32 32l0 224 224 0 0-128c0-17.7 14.3-32 32-32l160 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64-448 0 0 64c0 17.7-14.3 32-32 32S0 465.7 0 448L0 64C0 46.3 14.3 32 32 32zm80 160a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"/></svg>
+                        </a>
+                    </div>
+                    <div class="pg_content">
+                        <h4>PG's</h4>
+                        <p>Safe & Comfortable</p>
+                    </div>
+                </div><br>
+                <div class="pg_types">
+                    <div class="pg_icon">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="rgb(252, 92, 116)" d="M64 128a112 112 0 1 1 224 0 112 112 0 1 1 -224 0zM0 464c0-97.2 78.8-176 176-176s176 78.8 176 176l0 6c0 23.2-18.8 42-42 42L42 512c-23.2 0-42-18.8-42-42l0-6zM432 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zm0 240c79.5 0 144 64.5 144 144l0 22.4c0 23-18.6 41.6-41.6 41.6l-144.8 0c6.6-12.5 10.4-26.8 10.4-42l0-6c0-51.5-17.4-98.9-46.5-136.7 22.6-14.7 49.6-23.3 78.5-23.3z"/></svg>
+                        </a>
+                    </div>
+                    <div class="pg_content">
+                        <h4>Coliving's</h4>
+                        <p>Live & Connect</p>
+                    </div>
+                    
+                </div><br>
+                <div class="pg_types">
+                    <div class="pg_icon">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(252, 92, 116)" d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2 0 205.3c0 35.3-28.7 64-64 64l-288 0c-35.3 0-64-28.7-64-64l0-205.3-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9L240 6.1zm16 50.1L96 199.7 96 448c0 8.8 7.2 16 16 16l48 0 0-104c0-39.8 32.2-72 72-72l48 0c39.8 0 72 32.2 72 72l0 104 48 0c8.8 0 16-7.2 16-16l0-248.3-160-143.4zM208 464l96 0 0-104c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24l0 104z"/></svg>
+                        </a>
+                    </div>
+                    <div class="pg_content">
+                        <h4>Home's</h4>
+                        <p>Find Your Perfect Home </p>
+                    </div>
+                </div>
+            </div>
+            <div class="support">
+                <h3>SUPPORT</h3><br>
+                <div class="l_line"></div><br>
+                <a href=""><span>> &nbsp;</span>Help Center</a><br><br>
+                <a href=""><span>> &nbsp;</span>FAQs</a><br><br>
+                <a href=""><span>> &nbsp;</span>Contact Us</a><br><br>
+                <a href=""><span>> &nbsp;</span>Privacy Policy</a><br><br>
+                <a href=""><span>> &nbsp;</span>Terms & Conditions</a><br><br>
+
+            </div>
+            <div class="social">
+                <h3>FOLLOW US</h3><br>
+                <div class="l_line"></div>
+                <div class="media">
+                    <div class="me_icon">
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="rgb(252, 92, 116)" d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> 
+                    </a>
+                    </div>
+                    <div class="me_con">
+                        <h4>Inatagram</h4>
+                    </div>
+                    
+                </div>
+                <div class="media">
+                    <div class="me_icon">
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 512"><path fill="rgb(252, 92, 116)" d="M80 299.3l0 212.7 116 0 0-212.7 86.5 0 18-97.8-104.5 0 0-34.6c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4 .4 37 1.2l0-88.7C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4l0 42.1-66 0 0 97.8 66 0z"/></svg> 
+                    </a>
+                    </div>
+                    <div class="me_con">
+                        <h4>Facebook</h4>
+                    </div>
+                    
+                </div>
+                <div class="media">
+                    <div class="me_icon">
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 512"><path fill="rgb(252, 92, 116)" d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg>
+                    </a>
+                    </div>
+                    <div class="me_con">
+                        <h4>Linkedin</h4>
+                    </div>
+                </div>
+                <div class="media">
+                    <div class="me_icon">
+                        <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="rgb(252, 92, 116)" d="M549.7 124.1C543.5 100.4 524.9 81.8 501.4 75.5 458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5C51.2 81.8 32.7 100.4 26.4 124.1 15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8 42.6 11.5 213.4 11.5 213.4 11.5s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6l0-162.4 142.7 81.2-142.7 81.2z"/></svg> 
+                    </a>
+                    </div>
+                    <div class="me_con">
+                        <h4>YouTube</h4>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="foot_2">
+            <div class="fo_out">
+                <div class="fo_1">
+                    <div class="f1">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="rgb(252, 92, 116)" d="M496 544a144 144 0 1 1 0-288 144 144 0 1 1 0 288zM268.6 6.5c12.2-9.3 29.7-8.7 41.2 2l217.6 202c-10.2-1.7-20.7-2.6-31.3-2.6-78.6 0-146.1 47.2-175.8 114.8-5.1-1.8-10.5-2.8-16.2-2.8l-32 0c-26.5 0-48 21.5-48 48l0 96 91 0c6.1 17.3 14.6 33.4 25.1 48L144 512c-35.3 0-64-28.7-64-64l0-176-16 0c-13.2 0-25-8.1-29.8-20.3s-1.6-26.2 8-35.1l224-208 2.4-2zM553.4 339.1c-7.1-5.2-17.1-3.6-22.3 3.5l-53 72.8-26.7-26.8c-6.2-6.2-16.4-6.2-22.6 0-6.2 6.2-6.2 16.4 0 22.6l40 40c3.3 3.3 7.9 5 12.6 4.7s8.9-2.8 11.7-6.6l64-88c5.2-7.1 3.6-17.1-3.5-22.3z"/></svg>
+                        </a>
+                    </div>
+                    <div class="f2">
+                        <h4>Verified Listings</h4>
+                        <p>100% Trusted PGs <br>and Homes</p>
+                    </div>
+                </div>
+                <div class="fo_2">
+                    <div class="f1">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 512"><path fill="rgb(252, 92, 116)" d="M0 64C0 46.3 14.3 32 32 32l264 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-76.7 0c17.7 19.8 30.1 44.6 34.7 72l42 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-42 0c-10.4 62.2-60.8 110.9-123.8 118.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256l80 0c35.8 0 66.1-23.5 76.3-56L24 200c-13.3 0-24-10.7-24-24s10.7-24 24-24l164.3 0c-10.2-32.5-40.5-56-76.3-56L32 96C14.3 96 0 81.7 0 64z"/></svg>
+                        </a>
+                    </div>
+                    <div class="f2">
+                        <h4>Affordable Prices</h4>
+                        <p>Best stays in your <br>budget</p>
+                    </div>
+                </div>
+                <div class="fo_3">
+                    <div class="f1">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="rgb(252, 92, 116)" d="M378.9 80c-27.3 0-53 13.1-69 35.2l-34.4 47.6c-4.5 6.2-11.7 9.9-19.4 9.9s-14.9-3.7-19.4-9.9l-34.4-47.6c-16-22.1-41.7-35.2-69-35.2-47 0-85.1 38.1-85.1 85.1 0 49.9 32 98.4 68.1 142.3 41.1 50 91.4 94 125.9 120.3 3.2 2.4 7.9 4.2 14 4.2s10.8-1.8 14-4.2c34.5-26.3 84.8-70.4 125.9-120.3 36.2-43.9 68.1-92.4 68.1-142.3 0-47-38.1-85.1-85.1-85.1zM271 87.1c25-34.6 65.2-55.1 107.9-55.1 73.5 0 133.1 59.6 133.1 133.1 0 68.6-42.9 128.9-79.1 172.8-44.1 53.6-97.3 100.1-133.8 127.9-12.3 9.4-27.5 14.1-43.1 14.1s-30.8-4.7-43.1-14.1C176.4 438 123.2 391.5 79.1 338 42.9 294.1 0 233.7 0 165.1 0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1l15 20.7 15-20.7z"/></svg>
+                        </a>
+                    </div>
+                    <div class="f2">
+                        <h4>Comfort & Safety</h4>
+                        <p>Your well-being is <br>our priority</p>
+                    </div>
+                </div>
+                <div class="fo_4">
+                    <div class="f1">
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 504 512"><path fill="rgb(252, 92, 116)" d="M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"/></svg>
+                        </a>
+                    </div>
+                    <div class="f2">
+                        <h4>Prime Location</h4>
+                        <p>Near you, Where  <br>you need to be</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
