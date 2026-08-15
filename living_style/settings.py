@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 1.change one
 # SECRET_KEY = 'django-insecure-9dm=rj##b@8#d(o#dr^2%7c+jtjbaqr7%mucaj$s^usms8-&72'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-local-development-key-change-this'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -84,17 +91,28 @@ WSGI_APPLICATION = 'living_style.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# 4.change four
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         # 'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME':'rental',
+#         'USER':'root',
+#         'PASSWORD':'root',
+#         'HOST':'localhost',
+#         'PORT':'3306'
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME':'rental',
-        'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT':'3306'
-    }
+    'default': dj_database_url.config(
+        default='mysql://root:root@localhost:3306/rental',
+        conn_max_age=600
+    )
 }
+
+
 
 
 # Password validation
