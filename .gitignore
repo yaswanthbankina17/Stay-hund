@@ -6,6 +6,6 @@ __pycache__/
 *.pyc
 db.sqlite3
 .env
-media/
+# media/
 *.sql
 living_app_data.json
